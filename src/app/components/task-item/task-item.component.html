@@ -1,0 +1,22 @@
+<div
+  [ngClass]="{ reminder: task.reminder }"
+  class="flex-col p-4 bg-slate-300 mt-2 rounded-md text-slate-600 cursor-pointer"
+  (dblclick)="onToggle(task)"
+>
+  <div class="flex justify-between items-center">
+    <div class="flex flex-col gap-1">
+      <h3 class="text-lg font-semibold">
+        {{ task.text }}
+      </h3>
+      <p class="text-sm">{{ task.day }}</p>
+    </div>
+    <div>
+      <fa-icon
+        title="Remove"
+        (click)="onDelete(task)"
+        class="cursor-pointer text-red-500"
+        [icon]="faTimes"
+      ></fa-icon>
+    </div>
+  </div>
+</div>
